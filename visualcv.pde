@@ -77,11 +77,10 @@ void setup() {
 void draw() {
   background(col_white);
 
-    
-  // -- Select which module to render
+  // -- Select which module to render by commenting out the function
         getJobs();
-        getLanguages();
-        getSkills();
+        //getLanguages();
+        //getSkills();
 }
 
 void getLanguages() {
@@ -180,6 +179,7 @@ void getJobs() {
   timeLine();
   getEntries();
   getIcons();
+  
 }
 
 void getIcons() {
