@@ -5,7 +5,6 @@ Visual CV is a data visualization tool to represent curriculum elements such as 
 1. Select which module to render by commenting out the function
 
 		void draw() {
-	 
 	        getJobs();
 	        //getLanguages();
 	        //getSkills();
