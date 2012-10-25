@@ -19,8 +19,10 @@ Visual CV is a data visualization tool to represent curriculum elements such as 
 
 ##Created by
 Visual CV was designed and developed by [Luis Cielak](http://twitter.com/luiscielak/).
-Icons by [glyphish](http://www.glyphish.com/).
-Built with [Processing] (http://www.processing.org/) in 2011.
+
+Icons by [Glyphish](http://www.glyphish.com/).
+
+Built with [Processing] (http://www.processing.org/).
 
 
 
