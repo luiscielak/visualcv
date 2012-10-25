@@ -10,8 +10,18 @@ Visual CV is a data visualization tool to represent curriculum elements such as 
 	        //getSkills();
 		}
 
-2. Export to PDF or PNG
+2. Export to PDF (vector) or PNG (raster)
 
+
+###Output
+**Jobs and Academics**
+![Jobs and Academics](https://raw.github.com/luiscielak/visualcv/master/121025_012005_493.png)
+
+**Skills**
+![Skills](https://raw.github.com/luiscielak/visualcv/master/121025_012021_28.png)
+
+**Languages**
+![Languages](https://raw.github.com/luiscielak/visualcv/master/121025_012013_72.png)
 
 ##Roadmap
 - Dynamic data loads
@@ -20,9 +30,5 @@ Visual CV is a data visualization tool to represent curriculum elements such as 
 ##Created by
 Visual CV was designed and developed by [Luis Cielak](http://twitter.com/luiscielak/).
 
-Icons by [Glyphish](http://www.glyphish.com/).
-
-Built with [Processing] (http://www.processing.org/).
-
-
+Icons by [glyphish](http://www.glyphish.com/).
 
