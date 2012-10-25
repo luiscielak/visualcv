@@ -4,3 +4,8 @@ Visual CV is a data visualization tool to represent curriculum elements such as 
 ###Roadmap
 - Dynamic data loads
 - LinkedIn API integration
+
+##Created by
+Visual CV was designed and developed by [Luis Cielak](http://twitter.com/luiscielak/).
+
+
