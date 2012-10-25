@@ -1,6 +1,6 @@
 //
 //  Project:      Visual CV
-//  Last update:  2012-03-26
+//  Last update:  2012-10-25
 //  Author:       luis@luiscielak.com
 //
 
@@ -9,55 +9,59 @@ import processing.pdf.*;
 PImage img1, img2, img3, img4;
 
 PFont font;
+color col;
 
-color col;    // color variable
-
+// -- Colors
 color col_blue = color(120, 220, 290, 140);
 color col_white = color(240);
-
 color col_orange = #f58020;
-
 color col_lightorange = #f5ad73;
-
 color col_grey = #a6a6a6;
 color col_lightgrey = #f0f0f0;
-
 color col_black = color(63);
 
 
-
+// -- Data
+// ---- Dates
 String[] yearString = {
   "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012"
 };
+float totalYears = yearString.length;
 
-float totalYears = 9;    // yearString.length()
 
+// ---- Skills
 String[] skillString = {
   //  "HTML", "CSS", "XML", "PHP", "SQL", "ColdFusion", "VBA", "JavaScript", "Processing", ".NET"
   "100", "HTML", "XML", "SQL", "Processing", "CSS", "PHP", "ColdFusion", "JS", "VBA", ".NET"
 };
 
+// -- Layout
 int plotX1, plotY1, plotX2, plotY2;
 
-
+// -- Basic Elements
 float r;
 float w;
 
 
 void setup() {
-  size(1170, 530);      // size(1170, 530);
+  size(1024,768);      // size(1170, 530);
   smooth();
-
-  //  noLoop();
-
+  
+//  noLoop();
+ 
+  // initialize elements  
   font = createFont("TrebuchetMS.vlw", 20);
+
+  stroke(240);
+  strokeWeight(1);    
   col = col_orange;
 
   plotX1 = 10;
-  plotY1 = 10;      // plotX1 = 90
+  plotY1 = 10;
   plotX2 = width-plotX1;
   plotY2 = height-plotY1;
-
+  
+  // load images/icons  
   img1 = new PImage();
   img1 = loadImage("36-toolbox.png");
   img2 = new PImage();
@@ -67,54 +71,55 @@ void setup() {
   img4 = new PImage();
   img4 = loadImage("124-bullhorn.png");
 
-
-  stroke(240);
-  strokeWeight(1);
+  
 }
 
 void draw() {
   background(col_white);
 
-
-  getJobs();
-  //  getLanguages();
-  //  getSkills();
+    
+  // -- Select which module to render
+        getJobs();
+        getLanguages();
+        getSkills();
 }
 
 void getLanguages() {
+  // this function creates a venn diagram based on langauges spoken.
+    
 
+  // set radius
   r = 230;
-
-
 
   noStroke();
 
   textAlign(CENTER);
   textFont(font, 14);
 
-  // - icon
+  // display icons
   imageMode(CENTER);
   fill(col, 110);
   noStroke();
   ellipse(img1.width, img1.height +5, img2.width*1.5, img2.width*1.5);
   tint(col_black, 120);
   image(img4, img1.width, img1.height+5);
-
   fill(col, 120);
   ellipse(width/2+r/2, height/2, r*2  +textWidth("spanglish")/2, r*2);
-
   ellipse(width/2-r/2, height/2, r*2 +textWidth("spanglish")/2, r*2); 
 
   fill(col_black, 165);
-
   textFont(font);
-
+  
+  // langauges spoken                    
+  // @todo: create array; fetch from db 
   text("spanish", width/2-r, height/2);
   text("english", width/2+r, height/2);
   text("spanglish", width/2, height/2);
 }
 
 void getSkills() {
+  // this function craetes a hierarchy 'flower-like' chart based on top skills
+  
   r= 171;  // 75 
   w = 64;  //29
   //  println(r+" "+w);
@@ -171,8 +176,6 @@ void getSkills() {
 }
 
 void getJobs() {
-
-
 
   timeLine();
   getEntries();
@@ -532,11 +535,10 @@ void timeLine() {
     // month+quarter ticks
     strokeWeight(0.5);
     for (int j = 0; j < 12; j++) {
-         // --- FIX THIS!
+         // --- FIX THIS!    @todo
       // ------- month ticks
-//                              if (j>0)ellipse((width/8 * i) + j * width/96, height/2 -9, 0.5, 0.5);
-//                              if (j>0)ellipse((width/8 * i) + j * width/96, height/2 +9, 0.5, 0.5);
-
+      //                              if (j>0)ellipse((width/8 * i) + j * width/96, height/2 -9, 0.5, 0.5);
+      //                              if (j>0)ellipse((width/8 * i) + j * width/96, height/2 +9, 0.5, 0.5);
       // -------- quarter ticks
       //                        if (j%4!=0) ellipse((width/8 * i) + j * width/32, height/2 -9, 1, 1);
       //                        if (j%4!=0) ellipse((width/8 * i) + j * width/32, height/2 +9, 1, 1);
@@ -547,7 +549,7 @@ void timeLine() {
 }
 
 
-// ------ print frames ------
+// ------ export frames
 
 void keyReleased() {
   if (key == 's' || key == 'S') {
